@@ -4,13 +4,15 @@ class EventManager {
     this.hover = hover;
     this.mouseover = mouseover;
   }
+
   on = eventName => {
     if (this[eventName]) {
       console.log(this[eventName])
     }
   }
 
-  off = () => console.log('all events are disabled')
+  off = () => console.log('all events are disabled');
+
   trigger = name => {
     this.on(name)
   }

@@ -1,4 +1,3 @@
-
 function BankAccount() {
   let balance = 0;
   const doTransaction = (moneyAmount, type) => {
@@ -14,7 +13,7 @@ function BankAccount() {
   };
 
   this.deposit = moneyAmount => {
-    if(typeof moneyAmount === 'number') {
+    if (typeof moneyAmount === 'number') {
       doTransaction(balance, moneyAmount, 'deposit');
     } else {
       throw new Error(`Invalid type of money amount`);
@@ -33,7 +32,7 @@ function BankAccount() {
 }
 
 const bankAccount = new BankAccount();
-bankAccount.deposit(-100)
-bankAccount.withdraw(50)
-bankAccount.deposit(700000)
-bankAccount.getBalance()
+bankAccount.deposit(-100);
+bankAccount.withdraw(50);
+bankAccount.deposit(700000);
+bankAccount.getBalance();
