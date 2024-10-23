@@ -1,5 +1,7 @@
 function getAverageValue (array: number[]): number {
-  if(array.length > 0 && !Array.isArray(array)) return;
+  if (!array || !array.length) {
+    throw new Error('Arguments should include an array with items type number');
+  }
 
   return array.reduce((acc, value) => acc + value, 0)
 }
