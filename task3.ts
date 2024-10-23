@@ -8,4 +8,4 @@ function getAverageValue (array: number[]): number {
   return array.reduce((acc, value) => acc + value / array.length, 0)
 }
 
-console.log(getAverageValue([6, 1]))
+console.log(getAverageValue([6, NaN]))
