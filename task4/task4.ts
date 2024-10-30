@@ -1,5 +1,4 @@
 const text = "This is a test, sentence test with some bad words.";
-const forbiddenWords = ["bad", "test"];
 
 const highlightForbiddenWords = (string: string, words: string[]): string => {
   if (!words || !Array.isArray(words)) {
@@ -17,5 +16,9 @@ const highlightForbiddenWords = (string: string, words: string[]): string => {
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  document.getElementById('text').innerHTML = highlightForbiddenWords(text, forbiddenWords);
+  const forbiddenWords = prompt("Please enter forbidden words", "");
+
+  if (forbiddenWords) {
+    document.getElementById('text').innerHTML = highlightForbiddenWords(text, forbiddenWords.split(/, | |,/));
+  }
 });
