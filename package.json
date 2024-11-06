@@ -1,0 +1,12 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "task.ts",
+  "scripts": {
+    "start": "ts-node task.ts",
+    "watch": "tsc -p tsconfig.json --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
