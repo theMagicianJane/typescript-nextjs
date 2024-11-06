@@ -37,7 +37,7 @@ interface Person {
 
 
 interface Settings {
-  theme: 'light' | 'dark',
+  theme: Theme,
   notifications: boolean,
   autoSave: {
     enabled: boolean,
