@@ -1,17 +1,11 @@
-const arr: any[] = [1, 2, 3, 4, 5, 6];
-const reverseArray = values => {
-  let i = 0;
+const arr: unknown[] = [1, 2, 3, 4];
+const reverseArray = (values: unknown[]): unknown[]  => {
+  const length: number = values.length;
 
-  if (!values && !Array.isArray(values)){
-    throw new Error('An argument should be an array')
+  for (let i: number = 0, j: number = length - 1; i < length / 2; i++, j--) {
+    values.splice(i, 1, values.splice(j, 1, values[i])[0]);
   }
 
-  while (i < values.length - 1) {
-    values.splice(i, 0, values[values.length - 1])
-    values.pop();
-
-    i++
-  }
   return values;
 }
 
