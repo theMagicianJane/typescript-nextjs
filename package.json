@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "task.ts",
+  "type": "module",
   "scripts": {
     "start": "ts-node task.ts",
     "watch": "tsc -p tsconfig.json --watch"

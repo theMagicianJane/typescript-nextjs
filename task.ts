@@ -1,39 +1,12 @@
-import { UserWithAddress, Person, Settings } from './interfaces/index';
-import { Orders } from './types/index';
-
-const user: UserWithAddress = {
-  name: 'Test name',
-  age: 45,
-  email: 'test',
-  zipCode: '50000',
-  street: 'Sesame',
-  city: 'Kyiv',
+import { Student } from './types/index';
+function filterByProperty<T, K extends keyof T>(array: T[], property: K, value: T[K]): T[] {
+  return array.filter(item => item[property] > value)
 }
 
-const orders: Orders = [{
-  orderId: 5,
-  userId: 10,
-  products: [{
-    name: 'Product1',
-    price: 10,
-    category: {
-      categoryName: 'Kitchen',
-      categoryId: 20
-    }
-  }]
-}]
+const students: Student[] = [
+  { id: 5, name: 'Alice', age: 25, score: 20 },
+  { id: 2, name: 'Bob', age: 30, score: 80 },
+  { id: 3, name: 'Charlie', age: 35, score: 100 },
+];
 
-const getFullName = ({ firstName, lastName, middleName }: Person): string =>
-  middleName ? `${firstName} ${lastName} ${middleName}` : '';
-
-const settings = {
-  theme: "light",
-  notifications: true,
-  autoSave: {
-    enabled: true,
-    interval: 3000
-  }
-};
-
-const applySettings = (values: Settings): string =>
-  `Notifications are ${values?.notifications ? 'enabled' : 'disabled'}`;
+const activeUsers = filterByProperty(students, 'score', 60);

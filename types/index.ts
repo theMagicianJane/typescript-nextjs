@@ -1,8 +1,6 @@
-import { Product, Order } from '../interfaces/index';
-
-
-type Orders = Order[];
-type Products = Product[];
-type Theme = 'light' | 'dark';
-
-export { Orders, Products, Theme }
+export type Student = {
+  id: number;
+  name: string;
+  age: number;
+  score: number;
+};
